@@ -1,0 +1,16 @@
+pragma solidity ^0.5.0;
+
+//Assign a data and return the same
+contract SimpleStorage{
+    string public data;
+//This is a transaction
+    function setData(string memory _data)public{
+        data = _data;
+        
+    }
+    // this is a call which is read only  and doesnt cost any gas
+    //view is  used to read from memory , pure is used to read static memory value
+    function getData() view public returns(string memory){
+        return data;
+    }
+}
